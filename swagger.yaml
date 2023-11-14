@@ -1,0 +1,23 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "UnDentifed Api",
+    "description" : "This is the official undentified api.",
+    "contact" : {
+      "name" : "Dqrk",
+      "email" : "staurospapadogiannopoulos@gmal.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://virtserver.swaggerhub.com/Dqrkky/UnDentified/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "components" : {
+    "schemas" : { }
+  }
+}
