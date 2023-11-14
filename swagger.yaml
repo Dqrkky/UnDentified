@@ -19,11 +19,11 @@
   "paths" : {
     "/api/users" : {
       "get" : {
-        "description" : "Returns a list of artists",
+        "description" : "Returns a list of users",
         "parameters" : [ {
           "name" : "limit",
           "in" : "query",
-          "description" : "Limits the number of items on a page",
+          "description" : "Limits the number of users on a page",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -33,7 +33,7 @@
         }, {
           "name" : "offset",
           "in" : "query",
-          "description" : "Specifies the page number of the artists to be displayed",
+          "description" : "Specifies the page number of the users to be displayed",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -42,13 +42,25 @@
           }
         } ],
         "responses" : {
-          "content" : { },
+          "200" : {
+            "description" : "Users",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/inline_response_200"
+                  }
+                }
+              }
+            }
+          },
           "400" : {
             "description" : "Invalid request",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "type" : "object"
+                  "$ref" : "#/components/schemas/inline_response_400"
                 }
               }
             }
@@ -57,5 +69,33 @@
       }
     }
   },
-  "components" : { }
+  "components" : {
+    "schemas" : {
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer"
+          },
+          "nickname" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "discriminator" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "inline_response_400" : {
+        "type" : "object",
+        "properties" : {
+          "message" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
 }
