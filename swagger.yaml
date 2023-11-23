@@ -20,27 +20,30 @@
     "/api/users" : {
       "get" : {
         "description" : "Returns a list of users",
-        "parameters" : [ {
-          "name" : "limit",
-          "in" : "query",
-          "description" : "Limits the number of users on a page",
-          "required" : false,
-          "style" : "form",
-          "explode" : true,
-          "schema" : {
-            "type" : "integer"
+        "parameters" : [
+          {
+            "name" : "limit",
+            "in" : "query",
+            "description" : "Limits the number of users on a page",
+            "required" : false,
+            "style" : "form",
+            "explode" : true,
+            "schema" : {
+              "type" : "integer"
+            }
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "description" : "Specifies the page number of the users to be displayed",
+            "required" : false,
+            "style" : "form",
+            "explode" : true,
+            "schema" : {
+              "type" : "integer"
+            }
           }
-        }, {
-          "name" : "offset",
-          "in" : "query",
-          "description" : "Specifies the page number of the users to be displayed",
-          "required" : false,
-          "style" : "form",
-          "explode" : true,
-          "schema" : {
-            "type" : "integer"
-          }
-        } ],
+        ],
         "responses" : {
           "200" : {
             "description" : "Users",
