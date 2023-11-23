@@ -4,8 +4,7 @@
     "title" : "UnDentifed Api",
     "description" : "This is the official undentified api.",
     "contact" : {
-      "name" : "Dqrk",
-      "email" : "staurospapadogiannopoulos@gmal.com"
+      "name" : "Dqrk"
     },
     "license" : {
       "name" : "Apache 2.0",
